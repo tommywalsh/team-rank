@@ -1,0 +1,18 @@
+.PHONY: test clean
+
+sources := $(shell ls *cpp)
+executables := $(sources:.cpp=.run)
+sentinels := $(executables:.run=.passed)
+
+CXXFLAGS := -I.. --std=c++0x
+
+%.run : %.cpp ../%.hpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+%.passed : %.run
+	./$< && touch $@
+
+test: $(sentinels)
+
+clean:
+	rm -f $(executables) $(sentinels)
