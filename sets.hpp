@@ -2,6 +2,7 @@
 #define SETS_HPP
 
 #include <set>
+#include <algorithm>
 
 // Helper functions to make dealing with std::set a bit easier, and easier to read
 // (at the potential expense of efficiency)
