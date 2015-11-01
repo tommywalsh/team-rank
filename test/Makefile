@@ -4,7 +4,7 @@ sources := $(shell ls *cpp)
 executables := $(sources:.cpp=.run)
 sentinels := $(executables:.run=.passed)
 
-CXXFLAGS := -I.. --std=c++0x
+CXXFLAGS := -I.. -g --std=c++0x
 
 %.run : %.cpp ../%.hpp
 	$(CXX) $(CXXFLAGS) $< -o $@

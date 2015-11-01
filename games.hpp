@@ -4,6 +4,8 @@
 #include "datastore.hpp"
 #include "teams.hpp"
 
+#include <set>
+
 // Helper struct. We model a game as a pair of "half games".
 // Each half-game has a winner and a loser.
 // A game that is won consists of two identical half-games
@@ -15,9 +17,8 @@ struct HalfGame {
 };
 
 class Game {
-public:
-  std::vector<HalfGame> results;
 private:
+  std::vector<HalfGame> results;
   Game(HalfGame hg1, HalfGame hg2) : results{hg1, hg2} {}
 public:
 
@@ -40,12 +41,59 @@ public:
 class GameDB {
 private:
   DataStore<Game> datastore;
-  std::map<Reference<Team>, std::vector<Reference<Game>>> teamToGames;
+  std::map<Reference<Team>, std::multimap<Reference<Team>, Reference<Game>>> teamToGames;
+
+  // Each game is stored twice (to ease lookups by either team). This method stores one.
+  void insertSingleGameEntry(Reference<Team> team1, Reference<Team> team2, Reference<Game> game) {
+    auto teamMap = teamToGames.find(team1);
+    if (teamMap == teamToGames.end()) {
+      // First game involving team1. Make everything from scratch
+      std::multimap<Reference<Team>, Reference<Game>> subMap;
+      subMap.insert(std::make_pair(team2, game));
+      teamToGames.insert(std::make_pair(team1, subMap));
+    } else {
+      // We've already seen team1
+      teamMap->second.insert(std::make_pair(team2, game));
+    }
+  }
+
 public:
-  void addGame(Game game) {
+  Reference<Game> addGame(Game game) {
     auto gameRef = datastore.create(game);
-    teamToGames[game.results[0].winner].push_back(gameRef);
-    teamToGames[game.results[0].loser].push_back(gameRef);
+    auto hg = *(game.getHalfGames().begin());
+    auto team1 = hg.winner;
+    auto team2 = hg.loser;
+
+    insertSingleGameEntry(team1, team2, gameRef);
+    insertSingleGameEntry(team2, team1, gameRef);
+
+    return gameRef;
+  }
+
+  // Returns all games involving the given team
+  std::set<Reference<Game>> getGames(Reference<Team> team) {
+    std::set<Reference<Game>> games;
+    auto subMap = teamToGames.find(team);
+    if (subMap != teamToGames.end()) {
+      for (auto entry : subMap->second) {
+        games.insert(entry.second);
+      }
+    }
+    return games;
+  }
+
+  // Returns all games involving both of the given teams
+  std::set<Reference<Game>> getGames(Reference<Team> team1, Reference<Team> team2) {
+    std::set<Reference<Game>> games;
+    auto entry = teamToGames.find(team1);
+    if (entry != teamToGames.end()) {
+      auto subMap = entry->second;
+      auto range = subMap.equal_range(team2);
+      for (auto i = range.first; i != range.second; ++i) {
+        games.insert(i->second);
+      }
+    }
+    return games;
   }
 };
 
