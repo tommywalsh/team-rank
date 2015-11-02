@@ -1,7 +1,6 @@
 #include "pods.hpp"
 
 #include "teams.hpp"
-#include "../teams.cpp"
 #include "games.hpp"
 
 void testPodDB() {
