@@ -7,7 +7,7 @@ sentinels := $(executables:.run=.passed)
 CXXFLAGS := -I.. -g --std=c++0x
 
 %.run : %.cpp ../%.hpp
-	$(CXX) $(CXXFLAGS) $< -o $@
+	$(CXX) $(CXXFLAGS) $< $(shell ls ../$< 2>/dev/null) -o $@
 
 %.passed : %.run
 	./$< && touch $@

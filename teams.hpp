@@ -5,6 +5,7 @@
 
 #include <string>
 #include <map>
+#include <set>
 
 // Simple class to represent a team. For now, only includes a single name.
 struct Team {
@@ -23,22 +24,7 @@ private:
 public:
   Reference<Team> getReference(const std::string& name);
   boost::optional<Team> read(Reference<Team> team) {return teamRepo.read(team);}
+  std::set<Reference<Team>> allTeams() const {return teamRepo.allItems();}
 };
-
-Reference<Team> TeamDB::addNewTeam(const std::string& name) {
-  Team team(name);
-  auto teamRef = teamRepo.create(team);
-  nameToRefMap.insert(std::make_pair(name, teamRef));
-  return teamRef;
-}
-
-Reference<Team> TeamDB::getReference(const std::string& name) {
-  auto entry = nameToRefMap.find(name);
-  if (entry == nameToRefMap.end()) {
-    return addNewTeam(name);
-  } else {
-    return entry->second;
-  }
-}
 
 #endif

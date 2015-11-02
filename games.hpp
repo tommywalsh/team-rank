@@ -95,6 +95,10 @@ public:
     }
     return games;
   }
+
+  boost::optional<Game> read(Reference<Game> gameRef) const {return datastore.read(gameRef);}
+
+  std::set<Reference<Game>> allGames() const {return datastore.allItems();}
 };
 
 #endif

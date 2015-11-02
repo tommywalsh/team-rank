@@ -3,7 +3,9 @@
 
 #include <cstddef>
 #include <vector>
+#include <set>
 #include <boost/optional.hpp>
+
 
 // Very simple CRUD-based datastore
 //
@@ -42,16 +44,19 @@ private:
 public:
 
   // Create a new object in the datastore.
-  Reference<T> create(const T& seed);
+  virtual Reference<T> create(const T& seed);
 
   // Read an object from the datastore, if it exists.
   boost::optional<T> read(Reference<T> ref) const;
 
   // Update a stored object.
-  void update(Reference<T> ref, const T& newVal);
+  virtual void update(Reference<T> ref, const T& newVal);
 
   // Remove an object from the datastore
-  void destroy(Reference<T> ref);
+  virtual void destroy(Reference<T> ref);
+
+  // Get references to all items in the datastore
+  std::set<Reference<T>> allItems() const;
 
   // Simple begin/end iterator accessors
   typename std::vector<boost::optional<T>>::const_iterator begin() const {
@@ -87,5 +92,17 @@ void DataStore<T>::destroy(Reference<T> ref) {
   // that will never be reused.
   db[ref.id()] = boost::none;
 }
+
+template<typename T>
+std::set<Reference<T>> DataStore<T>::allItems() const {
+  std::set<Reference<T>> items;
+  for (auto i = 0; i < db.size(); ++i) {
+    if (db[i]) {
+      items.insert(Reference<T>(i));
+    }
+  }
+  return items;
+}
+
 
 #endif

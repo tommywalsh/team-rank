@@ -53,13 +53,22 @@ std::set<T> Poset<T>::getTopLevel() const {
 }
 
 template <typename T>
+std::set<T> pullSetFromMap(const std::map<T,std::set<T>>& m, T item) {
+  auto it = m.find(item);
+  if (it != m.end()) {
+    return it->second;
+  } else {
+    return std::set<T>();
+  }
+}
+template <typename T>
 std::set<T> Poset<T>::getAbove(T below) const {
-  return ancestors.at(below);
+  return pullSetFromMap(ancestors, below);
 }
 
 template <typename T>
 std::set<T> Poset<T>::getBelow(T above) const {
-  return descendants.at(above);
+  return pullSetFromMap(descendants, above);
 }
 
 
@@ -74,6 +83,8 @@ bool Poset<T>::hasRelation(T maybeAbove, T maybeBelow) const {
 
 template <typename T>
 void Poset<T>::addRelation(T above, T below) {
+
+  if (above == below) return;
 
   auto grandAncestors = ancestors[above];
   for (auto ancestor : grandAncestors) {

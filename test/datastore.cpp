@@ -10,7 +10,7 @@ std::size_t getSize(DataStore<int>& ds) {
 }
 
 void assertSize(DataStore<int>& ds, std::size_t expectedSize) {
-  assert (getSize(ds) == expectedSize);
+  assert (ds.allItems().size() == expectedSize);
 }
 
 int main()

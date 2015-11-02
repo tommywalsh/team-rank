@@ -1,6 +1,8 @@
 #include "games.hpp"
 #include "teams.hpp"
 
+#include "../teams.cpp"
+
 int main() {
 	TeamDB teamDB;
 
