@@ -48,10 +48,10 @@ public:
   virtual void destroy(Reference<Game> gameRef);
 
   // Returns all games involving the given team
-  std::set<Reference<Game>> getGames(Reference<Team> team);
+  std::set<Reference<Game>> getGames(Reference<Team> team) const;
 
   // Returns all games involving both of the given teams
-  std::set<Reference<Game>> getGames(Reference<Team> team1, Reference<Team> team2);
+  std::set<Reference<Game>> getGames(Reference<Team> team1, Reference<Team> team2) const;
 };
 
 #endif

@@ -62,7 +62,7 @@ void GameDB::update(Reference<Game> gameRef, const Game& newGame) {
 }
 
 // Returns all games involving the given team
-std::set<Reference<Game>> GameDB::getGames(Reference<Team> team) {
+std::set<Reference<Game>> GameDB::getGames(Reference<Team> team) const {
   std::set<Reference<Game>> games;
   auto subMap = teamToGames.find(team);
   if (subMap != teamToGames.end()) {
@@ -74,7 +74,7 @@ std::set<Reference<Game>> GameDB::getGames(Reference<Team> team) {
 }
 
 // Returns all games involving both of the given teams
-std::set<Reference<Game>> GameDB::getGames(Reference<Team> team1, Reference<Team> team2) {
+std::set<Reference<Game>> GameDB::getGames(Reference<Team> team1, Reference<Team> team2) const {
   std::set<Reference<Game>> games;
   auto entry = teamToGames.find(team1);
   if (entry != teamToGames.end()) {
