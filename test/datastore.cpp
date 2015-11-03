@@ -1,14 +1,6 @@
 #include "datastore.hpp"
 
 
-std::size_t getSize(DataStore<int>& ds) {
-  std::size_t count = 0;
-  for (auto maybeItem : ds) {
-    if (maybeItem) ++count;
-  }
-  return count;
-}
-
 void assertSize(DataStore<int>& ds, std::size_t expectedSize) {
   assert (ds.allItems().size() == expectedSize);
 }
@@ -23,6 +15,7 @@ int main()
   auto b = store.create(10);
   assertSize(store, 2);
   assert(a != b);
+  assert(store.isValid(b));
 
   auto c = store.read(a);
   assert(c);
@@ -38,6 +31,7 @@ int main()
 
   assert(store.read(b));
   store.destroy(b);
+  assert(!store.isValid(b));
   assert(!store.read(b));
   assertSize(store, 1);
 

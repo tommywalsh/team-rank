@@ -49,6 +49,9 @@ public:
   // Read an object from the datastore, if it exists.
   boost::optional<T> read(Reference<T> ref) const;
 
+  // Tests a reference for validity
+  bool isValid(Reference<T> ref) const;
+
   // Update a stored object.
   virtual void update(Reference<T> ref, const T& newVal);
 
@@ -58,13 +61,74 @@ public:
   // Get references to all items in the datastore
   std::set<Reference<T>> allItems() const;
 
-  // Simple begin/end iterator accessors
-  typename std::vector<boost::optional<T>>::const_iterator begin() const {
-    return db.begin();
+  // Iterator that visits all valid objects in datastore (skipping over the holes)
+  class iterator : public std::iterator <std::input_iterator_tag, T> {
+    const DataStore* ds;
+    std::size_t index;
+
+    Reference<T> ref() const {
+      return Reference<T>(index);
+    }
+
+    void advanceIfNecessary() {
+      if (ds) {
+        while (index < ds->db.size()) {
+          auto r = ref();
+          if (ds->isValid(r)) return;
+          ++index;
+        }
+        // If we get here, we're out of objects
+        ds = nullptr;
+      }
+    }
+  public:
+    iterator() : ds(nullptr) {}
+    iterator(const DataStore* dataStore) : ds(dataStore), index(0) {
+      advanceIfNecessary();
+    }
+    iterator(const iterator& other) : ds(other.ds), index(other.index) {}
+
+    Reference<T> operator * () const {
+      return ref();
+    }
+
+    iterator& operator++ () {
+      ++index;
+      advanceIfNecessary();
+      return *this;
+    }
+
+    iterator operator++ (int) {
+      iterator tmp = *this;
+      ++(*this);
+      return tmp;
+    }
+
+    bool operator == (const iterator& other) {
+
+      // Different datastores -> not the same
+      if (ds != other.ds) return false;
+
+      // Neither have a datastore -> the same
+      if (!ds) return true;
+
+      // Otherwise, compare indices
+      return index == other.index;
+    }
+
+    bool operator != (const iterator& other) {
+      return !(*this == other);
+    }
+  };
+
+  iterator begin() const {
+    return iterator(this);
   }
-  typename std::vector<boost::optional<T>>::const_iterator end() const {
-    return db.end();
+
+  iterator end() const {
+    return iterator();
   }
+
 };
 
 template<typename T>
@@ -82,6 +146,12 @@ boost::optional<T> DataStore<T>::read(Reference<T> ref) const {
 }
 
 template<typename T>
+bool DataStore<T>::isValid(Reference<T> ref) const {
+  auto id = ref.id();
+  return (id < db.size()) && (db[id]);
+}
+
+template<typename T>
 void DataStore<T>::update(Reference<T> ref, const T& newVal) {
   db[ref.id()] = newVal;
 }
@@ -95,14 +165,7 @@ void DataStore<T>::destroy(Reference<T> ref) {
 
 template<typename T>
 std::set<Reference<T>> DataStore<T>::allItems() const {
-  std::set<Reference<T>> items;
-  for (auto i = 0; i < db.size(); ++i) {
-    if (db[i]) {
-      items.insert(Reference<T>(i));
-    }
-  }
-  return items;
+  return std::set<Reference<T>>(begin(), end());
 }
-
 
 #endif
