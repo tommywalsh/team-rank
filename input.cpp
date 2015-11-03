@@ -12,11 +12,11 @@ namespace {
       auto team2 = teamDB.getReference(name2);
 
       if (score1 > score2) {
-        gameDB.addGame(Game::win(team1, team2));
+        gameDB.create(Game::win(team1, team2));
       } else if (score1 < score2) {
-        gameDB.addGame(Game::win(team2, team1));
+        gameDB.create(Game::win(team2, team1));
       } else {
-        gameDB.addGame(Game::tie(team1, team2));
+        gameDB.create(Game::tie(team1, team2));
       }
   }
 

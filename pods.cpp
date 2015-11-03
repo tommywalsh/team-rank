@@ -102,7 +102,7 @@ PodOrganizer::PodOrganizer(PodDB& pdb, Poset<Reference<Pod>>& pst) :
 
 
 void PodOrganizer::processGames(const GameDB& gameDB) {
-  for (auto gameRef : gameDB.allGames()) {
+  for (auto gameRef : gameDB.allItems()) {
     auto game = gameDB.read(gameRef);
     for (auto halfGame : game->getHalfGames()) {
       processWinLoss(halfGame.winner, halfGame.loser);

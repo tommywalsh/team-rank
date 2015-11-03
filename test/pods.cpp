@@ -33,10 +33,10 @@ void testPodOrganizer() {
   auto e = teamDB.getReference("Everett");
 
   GameDB gameDB;
-  gameDB.addGame(Game::win(a,b));
-  gameDB.addGame(Game::tie(c,d));
-  gameDB.addGame(Game::win(e,a));
-  gameDB.addGame(Game::win(e,c));
+  gameDB.create(Game::win(a,b));
+  gameDB.create(Game::tie(c,d));
+  gameDB.create(Game::win(e,a));
+  gameDB.create(Game::win(e,c));
 
   PodDB podDB;
   Poset<Reference<Pod>> poset;
@@ -75,7 +75,7 @@ void testPodOrganizer() {
   //     {a,b,e}
   //        |
   //      {c,d}
-  gameDB.addGame(Game::win(b,e));
+  gameDB.create(Game::win(b,e));
   PodDB podDB2;
   Poset<Reference<Pod>> poset2;
   PodOrganizer po2(podDB2, poset2);

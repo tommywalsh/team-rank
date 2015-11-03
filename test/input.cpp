@@ -20,5 +20,5 @@ int main() {
   processor.process(stream);
 
   assert(teamDB.allTeams().size() == 4);
-  assert(gameDB.allGames().size() == 5);
+  assert(gameDB.allItems().size() == 5);
 }

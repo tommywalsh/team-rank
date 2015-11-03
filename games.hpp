@@ -36,69 +36,22 @@ public:
 
 };
 
-// Simple datastore for games.
-// Only supports adding games. Retrieval of games will come later when we need it.
-class GameDB {
+class GameDB : public DataStore<Game> {
 private:
-  DataStore<Game> datastore;
   std::map<Reference<Team>, std::multimap<Reference<Team>, Reference<Game>>> teamToGames;
-
-  // Each game is stored twice (to ease lookups by either team). This method stores one.
-  void insertSingleGameEntry(Reference<Team> team1, Reference<Team> team2, Reference<Game> game) {
-    auto teamMap = teamToGames.find(team1);
-    if (teamMap == teamToGames.end()) {
-      // First game involving team1. Make everything from scratch
-      std::multimap<Reference<Team>, Reference<Game>> subMap;
-      subMap.insert(std::make_pair(team2, game));
-      teamToGames.insert(std::make_pair(team1, subMap));
-    } else {
-      // We've already seen team1
-      teamMap->second.insert(std::make_pair(team2, game));
-    }
-  }
+  void insertSingleGameEntry(Reference<Team> team1, Reference<Team> team2, Reference<Game> game);
+  void deleteGame(std::multimap<Reference<Team>, Reference<Game>>& map, Reference<Team> team, Reference<Game> game);
 
 public:
-  Reference<Game> addGame(Game game) {
-    auto gameRef = datastore.create(game);
-    auto hg = *(game.getHalfGames().begin());
-    auto team1 = hg.winner;
-    auto team2 = hg.loser;
-
-    insertSingleGameEntry(team1, team2, gameRef);
-    insertSingleGameEntry(team2, team1, gameRef);
-
-    return gameRef;
-  }
+  virtual Reference<Game> create(Game game);
+  virtual void update(Reference<Game> gameRef, const Game& newGame);
+  virtual void destroy(Reference<Game> gameRef);
 
   // Returns all games involving the given team
-  std::set<Reference<Game>> getGames(Reference<Team> team) {
-    std::set<Reference<Game>> games;
-    auto subMap = teamToGames.find(team);
-    if (subMap != teamToGames.end()) {
-      for (auto entry : subMap->second) {
-        games.insert(entry.second);
-      }
-    }
-    return games;
-  }
+  std::set<Reference<Game>> getGames(Reference<Team> team);
 
   // Returns all games involving both of the given teams
-  std::set<Reference<Game>> getGames(Reference<Team> team1, Reference<Team> team2) {
-    std::set<Reference<Game>> games;
-    auto entry = teamToGames.find(team1);
-    if (entry != teamToGames.end()) {
-      auto subMap = entry->second;
-      auto range = subMap.equal_range(team2);
-      for (auto i = range.first; i != range.second; ++i) {
-        games.insert(i->second);
-      }
-    }
-    return games;
-  }
-
-  boost::optional<Game> read(Reference<Game> gameRef) const {return datastore.read(gameRef);}
-
-  std::set<Reference<Game>> allGames() const {return datastore.allItems();}
+  std::set<Reference<Game>> getGames(Reference<Team> team1, Reference<Team> team2);
 };
 
 #endif

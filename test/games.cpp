@@ -29,9 +29,9 @@ int main() {
 	auto g3 = Game::win(c,a);
 
 	GameDB gameDB;
-	auto gr1 = gameDB.addGame(g1);
-	auto gr2 = gameDB.addGame(g2);
-	auto gr3 = gameDB.addGame(g3);
+	auto gr1 = gameDB.create(g1);
+	auto gr2 = gameDB.create(g2);
+	auto gr3 = gameDB.create(g3);
 
 	auto aGames = gameDB.getGames(a);
 	assert(aGames.size() == 2);
@@ -53,10 +53,18 @@ int main() {
 	assert(acGames.count(gr3) == 1);
 
 	auto g4 = Game::win(c,a);
-	auto gr4 = gameDB.addGame(g4);
+	auto gr4 = gameDB.create(g4);
  	acGames = gameDB.getGames(a,c);
 	assert(acGames.size() == 2);
 	assert(acGames.count(gr3) == 1);
 	assert(acGames.count(gr4) == 1);
 
+	gameDB.destroy(gr2);
+	assert(gameDB.allItems().size() == 3);
+	assert(gameDB.getGames(b).size() == 1);
+
+	assert(gameDB.getGames(c).size() == 2);
+	gameDB.update(gr4, Game::win(b,a));
+	assert(gameDB.getGames(c).size() == 1);
+	assert(gameDB.getGames(b).size() == 2);
 }
