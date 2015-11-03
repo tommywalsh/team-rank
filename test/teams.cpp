@@ -17,4 +17,15 @@ int main() {
 	assert(bt);
 	assert(b2t);
 	assert(bt->name == b2t->name);
+
+	assert(teamDB.allItems().size() == 2);
+	teamDB.destroy(b);
+	assert(teamDB.allItems().size() == 1);
+	teamDB.update(a, Team("Andover"));
+	assert(teamDB.allItems().size() == 1);
+	assert(teamDB.read(a)->name == "Andover");
+	auto a2 = teamDB.getReference("Andover");
+	auto a3 = teamDB.getReference("Arlington");
+	assert(a2 != a3);
+	assert(teamDB.allItems().size() == 2);
 }

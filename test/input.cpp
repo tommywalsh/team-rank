@@ -19,6 +19,6 @@ int main() {
   std::istringstream stream(input);
   processor.process(stream);
 
-  assert(teamDB.allTeams().size() == 4);
+  assert(teamDB.allItems().size() == 4);
   assert(gameDB.allItems().size() == 5);
 }

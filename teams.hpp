@@ -15,16 +15,15 @@ struct Team {
 
 // Simple data store for teams. Allows lookup by name, and access by reference.
 // Does not support removal of teams.
-class TeamDB
+class TeamDB : public DataStore<Team>
 {
 private:
-  DataStore<Team> teamRepo;
   std::map<std::string, Reference<Team>> nameToRefMap;
-  Reference<Team> addNewTeam(const std::string& name);
 public:
+  virtual Reference<Team> create(const std::string& name);
+  virtual void update(Reference<Team>, const Team& team);
+  virtual void destroy(Reference<Team> teamRef);
   Reference<Team> getReference(const std::string& name);
-  boost::optional<Team> read(Reference<Team> team) {return teamRepo.read(team);}
-  std::set<Reference<Team>> allTeams() const {return teamRepo.allItems();}
 };
 
 #endif
