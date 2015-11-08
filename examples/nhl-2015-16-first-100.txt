@@ -1,0 +1,100 @@
+Vancouver Canucks 5, Calgary Flames 1
+New York Rangers 3, Chicago Blackhawks 2
+San Jose Sharks 5, Los Angeles Kings 1
+Montreal Canadiens 3, Toronto Maple Leafs 1
+Winnipeg Jets 6, Boston Bruins 2
+Ottawa Senators 3, Buffalo Sabres 1
+Minnesota Wild 5, Colorado Avalanche 4
+Pittsburgh Penguins 0, Dallas Stars 3
+Carolina Hurricanes 1, Nashville Predators 2
+Edmonton Oilers 1, St. Louis Blues 3
+Philadelphia Flyers 2, Tampa Bay Lightning 3
+New York Rangers 4, Columbus Blue Jackets 2
+Toronto Maple Leafs 0, Detroit Red Wings 4
+Arizona Coyotes 4, Los Angeles Kings 1
+Winnipeg Jets 3, New Jersey Devils 1
+Chicago Blackhawks 3, New York Islanders 2
+Pittsburgh Penguins 1, Arizona Coyotes 2
+Montreal Canadiens 4, Boston Bruins 2
+Tampa Bay Lightning 4, Buffalo Sabres 1
+Detroit Red Wings 4, Carolina Hurricanes 3
+New York Islanders 1, Chicago Blackhawks 4
+Dallas Stars 3, Colorado Avalanche 6
+Philadelphia Flyers 1, Florida Panthers 7
+St. Louis Blues 2, Minnesota Wild 3
+Edmonton Oilers 0, Nashville Predators 2
+Columbus Blue Jackets 2, New York Rangers 5
+Anaheim Ducks 0, San Jose Sharks 2
+Ottawa Senators 5, Toronto Maple Leafs 4
+Calgary Flames 3, Vancouver Canucks 2
+New Jersey Devils 3, Washington Capitals 5
+Montreal Canadiens 3, Ottawa Senators 1
+Vancouver Canucks 2, Anaheim Ducks 1
+Tampa Bay Lightning 6, Boston Bruins 3
+Columbus Blue Jackets 2, Buffalo Sabres 4
+Winnipeg Jets 2, New York Islanders 4
+Florida Panthers 0, Philadelphia Flyers 1
+Florida Panthers 4, Carolina Hurricanes 1
+St. Louis Blues 4, Calgary Flames 3
+Edmonton Oilers 2, Dallas Stars 4
+Tampa Bay Lightning 1, Detroit Red Wings 3
+Vancouver Canucks 3, Los Angeles Kings 0
+Nashville Predators 3, New Jersey Devils 1
+Winnipeg Jets 4, New York Rangers 1
+Montreal Canadiens 3, Pittsburgh Penguins 2
+San Jose Sharks 5, Washington Capitals 0
+Arizona Coyotes 4, Anaheim Ducks 0
+Ottawa Senators 7, Columbus Blue Jackets 3
+Boston Bruins 6, Colorado Avalanche 2
+Chicago Blackhawks 0, Philadelphia Flyers 3
+Minnesota Wild 4, Arizona Coyotes 3
+St. Louis Blues 4, Edmonton Oilers 2
+Buffalo Sabres 2, Florida Panthers 3
+New York Rangers 0, Montreal Canadiens 3
+Nashville Predators 3, New York Islanders 4
+Ottawa Senators 0, Pittsburgh Penguins 2
+Dallas Stars 5, Tampa Bay Lightning 3
+Chicago Blackhawks 1, Washington Capitals 4
+Colorado Avalanche 3, Anaheim Ducks 0
+Toronto Maple Leafs 6, Columbus Blue Jackets 3
+Carolina Hurricanes 5, Detroit Red Wings 3
+Minnesota Wild 1, Los Angeles Kings 2
+San Jose Sharks 2, New Jersey Devils 1
+St. Louis Blues 4, Vancouver Canucks 3
+Calgary Flames 1, Winnipeg Jets 3
+Boston Bruins 5, Arizona Coyotes 3
+Edmonton Oilers 5, Calgary Flames 2
+Columbus Blue Jackets 1, Chicago Blackhawks 4
+Dallas Stars 4, Florida Panthers 2
+Detroit Red Wings 1, Montreal Canadiens 4
+San Jose Sharks 3, New York Islanders 6
+Nashville Predators 4, Ottawa Senators 3
+Toronto Maple Leafs 1, Pittsburgh Penguins 2
+Buffalo Sabres 1, Tampa Bay Lightning 2
+Carolina Hurricanes 1, Washington Capitals 4
+Minnesota Wild 1, Anaheim Ducks 4
+Colorado Avalanche 1, Los Angeles Kings 2
+New Jersey Devils 2, New York Rangers 1
+Edmonton Oilers 2, Vancouver Canucks 1
+St. Louis Blues 4, Winnipeg Jets 2
+San Jose Sharks 0, New York Rangers 4
+New York Islanders 4, Columbus Blue Jackets 0
+Washington Capitals 6, Calgary Flames 2
+St. Louis Blues 0, Montreal Canadiens 3
+Arizona Coyotes 2, New Jersey Devils 3
+Tampa Bay Lightning 4, Nashville Predators 5
+Dallas Stars 2, Philadelphia Flyers 1
+Florida Panthers 2, Pittsburgh Penguins 3
+Philadelphia Flyers 5, Boston Bruins 4
+Toronto Maple Leafs 1, Buffalo Sabres 2
+Carolina Hurricanes 1, Colorado Avalanche 0
+Detroit Red Wings 1, Edmonton Oilers 3
+Florida Panthers 2, Chicago Blackhawks 3
+Columbus Blue Jackets 2, Minnesota Wild 3
+Anaheim Ducks 1, Nashville Predators 5
+Arizona Coyotes 1, New York Rangers 4
+New Jersey Devils 5, Ottawa Senators 4
+Dallas Stars 4, Pittsburgh Penguins 1
+Los Angeles Kings 4, San Jose Sharks 1
+Washington Capitals 3, Vancouver Canucks 2
+Montreal Canadiens 7, Buffalo Sabres 2

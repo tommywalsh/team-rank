@@ -1,0 +1,191 @@
+Mercyhurst 2, Colgate 5
+Mercyhurst 9, Colgate 7
+North Dakota 5, Lake Superior State 2
+Clarkson 6, RIT 0
+St. Lawrence 5, Niagara 2
+Union 1, Sacred Heart 1
+Western Michigan 3, Ferris State 2
+Bentley 1, Mercyhurst 3
+Army West Point 1, Boston College 5
+Holy Cross 3, Quinnipiac 5
+Ohio State 3, Bowling Green 6
+UMass Lowell 3, Rensselaer 0
+Miami 3, Providence 7
+Wisconsin 2, Northern Michigan 2
+Maine 3, Michigan State 3
+Minnesota State 2, Omaha 3
+Alabama Huntsville 2, Connecticut 5
+Air Force 5, Denver 4
+Alaska 0, St. Cloud State 3
+Colorado College 3, Massachusetts 6
+Alaska Anchorage 3, Arizona State 2
+Quinnipiac 4, Holy Cross 2
+Lake Superior State 1, Michigan State 4
+Clarkson 4, Niagara 1
+Northeastern 2, Colgate 1
+St. Lawrence 5, RIT 1
+Union 5, Boston University 3
+New Hampshire 7, American International 3
+Bentley 2, Mercyhurst 3
+Miami 2, Providence 2
+Ferris State 1, Western Michigan 1
+Canisius 1, Penn State 6
+Bowling Green 2, Ohio State 0
+Wisconsin 3, Northern Michigan 3
+Maine 1, North Dakota 1
+Minnesota 0, Vermont 3
+Bemidji State 3, Minnesota Duluth 2
+Minnesota State 0, Omaha 2
+Alabama Huntsville 5, Connecticut 2
+Alaska 1, Arizona State 2
+Denver 3, Air Force 1
+Colorado College 3, Massachusetts 4
+Alaska Anchorage 2, St. Cloud State 6
+Rensselaer 2, Boston College 1
+Western Michigan 4, Bowling Green 1
+Quinnipiac 5, Arizona State 0
+Boston College 6, Wisconsin 0
+Northeastern 2, Bentley 3
+Union 1, Maine 1
+Massachusetts 5, Sacred Heart 2
+New Hampshire 2, St. Lawrence 3
+Robert Morris 5, Air Force 1
+Merrimack 7, Clarkson 1
+Ohio State 2, Miami 3
+Connecticut 5, Arizona State 1
+Vermont 3, Omaha 4
+Ferris State 1, Michigan Tech 5
+Northern Michigan 6, Lake Superior State 3
+Penn State 4, Notre Dame 7
+UMass Lowell 3, Colorado College 2
+Canisius 2, Bowling Green 4
+Providence 4, Holy Cross 1
+Michigan 6, Mercyhurst 4
+Minnesota 1, Minnesota Duluth 3
+Alaska Anchorage 4, Rensselaer 3
+Bemidji State 4, North Dakota 4
+St. Cloud State 4, Minnesota State 0
+Denver 4, Michigan State 2
+Alaska 7, American International 2
+Penn State 5, Notre Dame 3
+Union 2, Maine 0
+UMass Lowell 2, Colorado College 1
+New Hampshire 3, Clarkson 4
+Robert Morris 3, Air Force 3
+Bentley 4, Northeastern 1
+Boston University 4, Wisconsin 1
+RIT 2, Bowling Green 2
+Vermont 1, Omaha 3
+Ferris State 3, Michigan Tech 2
+Lake Superior State 4, Northern Michigan 0
+Sacred Heart 3, Arizona State 0
+Merrimack 3, St. Lawrence 1
+Miami 3, Ohio State 1
+St. Cloud State 3, Minnesota State 0
+Minnesota Duluth 3, Minnesota 0
+North Dakota 5, Bemidji State 2
+Alaska Anchorage 6, American International 2
+Denver 3, Michigan State 0
+Alaska 4, Rensselaer 2
+Michigan 3, Mercyhurst 2
+Quinnipiac 4, Maine 0
+Michigan State 2, Lake Superior State 4
+Canisius 4, Holy Cross 3
+Notre Dame 3, Minnesota Duluth 3
+Massachusetts 6, New Hampshire 6
+Clarkson 4, Western Michigan 2
+Colgate 5, RIT 2
+Providence 2, Ohio State 1
+Quinnipiac 5, St. Cloud State 2
+St. Lawrence 0, Miami 1
+Mercyhurst 4, Army West Point 2
+Niagara 3, Robert Morris 3
+Merrimack 1, UMass Lowell 1
+Michigan State 2, Lake Superior State 0
+Vermont 0, North Dakota 2
+Northern Michigan 4, Michigan Tech 1
+Ferris State 5, Wisconsin 5
+Penn State 8, American International 3
+Union 5, Michigan 5
+Minnesota 4, Northeastern 0
+Alabama Huntsville 3, Alaska Anchorage 3
+Bemidji State 2, Minnesota State 3
+Omaha 4, Air Force 2
+Colorado College 0, Boston College 3
+Penn State 5, American International 3
+Canisius 1, Holy Cross 4
+Boston University 4, Connecticut 2
+Notre Dame 3, Minnesota Duluth 3
+UMass Lowell 1, Merrimack 1
+Providence 6, Ohio State 4
+Quinnipiac 4, St. Cloud State 1
+Rensselaer 2, Michigan 5
+St. Lawrence 5, Miami 3
+Mercyhurst 5, Army West Point 2
+Niagara 2, Robert Morris 8
+RIT 3, Colgate 4
+Vermont 2, North Dakota 5
+Michigan Tech 3, Northern Michigan 1
+Ferris State 2, Wisconsin 1
+Clarkson 6, Western Michigan 2
+Union 2, New Hampshire 5
+Bemidji State 2, Minnesota State 3
+Alabama Huntsville 2, Alaska Anchorage 3
+Omaha 4, Air Force 1
+Minnesota 4, Northeastern 3
+Colorado College 0, Boston College 5
+American International 1, Sacred Heart 4
+Connecticut 5, Boston University 2
+Northeastern 2, Vermont 3
+Penn State 2, St. Lawrence 2
+Massachusetts 5, Maine 4
+Union 1, Rensselaer 5
+Western Michigan 4, Omaha 2
+Boston College 4, Denver 3
+Colgate 2, Providence 7
+American International 2, RIT 4
+Sacred Heart 0, Canisius 3
+Merrimack 4, Boston University 3
+Niagara 2, Cornell 3
+Ohio State 1, Mercyhurst 2
+Michigan Tech 5, Ferris State 4
+Northern Michigan 0, Bemidji State 0
+Penn State 2, St. Lawrence 4
+Princeton 1, Yale 3
+Michigan 5, Robert Morris 3
+Lake Superior State 4, Alabama Huntsville 5
+Wisconsin 5, Arizona State 1
+Minnesota State 5, Alaska 2
+Minnesota Duluth 2, UMass Lowell 1
+St. Cloud State 3, Miami 0
+Colorado College 2, North Dakota 5
+Army West Point 2, Bentley 2
+Connecticut 1, Notre Dame 2
+Michigan 0, Robert Morris 4
+Boston University 5, Denver 4
+Ohio State 5, Mercyhurst 1
+Princeton 3, Maine 1
+Alaska Anchorage 4, Bowling Green 2
+Rensselaer 3, Union 2
+Western Michigan 6, Omaha 1
+Colgate 3, Providence 4
+Cornell 4, Niagara 0
+American International 2, RIT 6
+Sacred Heart 4, Canisius 0
+Merrimack 2, New Hampshire 4
+Vermont 3, Northeastern 3
+Lake Superior State 0, Alabama Huntsville 5
+Michigan Tech 2, Ferris State 3
+Northern Michigan 3, Bemidji State 1
+Dartmouth 0, Harvard 7
+Brown 5, Holy Cross 7
+Yale 6, Massachusetts 1
+Wisconsin 2, Arizona State 1
+St. Cloud State 3, Miami 1
+Minnesota State 2, Alaska 1
+Minnesota Duluth 3, UMass Lowell 6
+Colorado College 0, North Dakota 2
+Bentley 6, Army West Point 2
+Connecticut 2, Notre Dame 8
+Alaska Anchorage 0, Bowling Green 2
+Harvard 5, Dartmouth 2
