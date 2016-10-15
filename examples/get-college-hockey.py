@@ -1,19 +1,20 @@
 import urllib2
 import re
+import sys
 
-url = "http://collegehockeyinc.com/stats/compnatfull16.php"
-year = "2015-2016"
-
-def retrieve_full_page():
+def retrieve_full_page(year):
+    url = "http://collegehockeyinc.com/stats/compnatfull{0}.php".format(year[-2:])
     response = urllib2.urlopen(url)
     return response.read()
 
-def process_page(page):
+def process_page(year, page):
     state = 'prequel'
-
+    season = "{0}-{1}".format(int(year)-1, year)
     for line in page.splitlines():
         if (state == 'prequel'):
-            if re.search(year, line):
+            if re.search(season, line):
+                state = 'awaiting date'
+        elif re.search('Exhibition', line):
                 state = 'awaiting date'
         elif (state == 'awaiting date'):
             if re.search('\d\d/\d\d/\d\d', line):
@@ -37,9 +38,13 @@ def process_page(page):
             homeScore= m.group()
             state = 'awaiting notes'
         elif (state == 'awaiting notes'):
-            if re.search('&nbsp;', line):
+            if re.search('/tr', line):
+                print homeTeam + " " + homeScore + ", " + awayTeam + " " + awayScore
                 state = 'awaiting date'
-                if not re.search('Exhibition', line):
-                    print homeTeam + " " + homeScore + ", " + awayTeam + " " + awayScore
 
-process_page(retrieve_full_page())
+if len(sys.argv) != 2:
+    print "Usage: %s year".format(sys.argv[0])
+    print "where 'year' is the ending year of the season. e.g. say '2016' for the 2015-2016 season"
+else:
+    year = sys.argv[1]
+    process_page(year, retrieve_full_page(year))
