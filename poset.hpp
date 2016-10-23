@@ -87,15 +87,18 @@ void Poset<T>::addRelation(T above, T below) {
   if (above == below) return;
 
   auto grandAncestors = ancestors[above];
+  auto grandDescendants = descendants[below];
+
   for (auto ancestor : grandAncestors) {
     descendants[ancestor].insert(below);
+    descendants[ancestor].insert(grandDescendants.begin(), grandDescendants.end());
   }
   ancestors[below].insert(grandAncestors.begin(), grandAncestors.end());
   ancestors[below].insert(above);
 
-  auto grandDescendants = descendants[below];
   for (auto descendant : grandDescendants) {
     ancestors[descendant].insert(above);
+    ancestors[descendant].insert(grandAncestors.begin(), grandAncestors.end());
   }
   descendants[above].insert(grandDescendants.begin(), grandDescendants.end());
   descendants[above].insert(below);
