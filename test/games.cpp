@@ -3,6 +3,8 @@
 
 #include "../teams.cpp"
 
+#include <cassert>
+
 int main() {
 	TeamDB teamDB;
 

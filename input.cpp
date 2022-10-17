@@ -1,7 +1,8 @@
 #include "input.hpp"
 
 #include <string>
-#include <boost/lexical_cast.hpp>
+#include <iostream>
+#include <cassert>
 
 namespace {
 
@@ -28,11 +29,11 @@ namespace {
 
     auto space = first.rfind(' ');
     std::string name1(first, 0, space);
-    auto score1 = boost::lexical_cast<int>(std::string(first, space+1));
+    auto score1 = stoi(std::string(first, space+1));
 
     space = second.rfind(' ');
     std::string name2(second, 0, space);
-    auto score2 = boost::lexical_cast<int>(std::string(second, space+1));
+    auto score2 = stoi(std::string(second, space+1));
 
     addGame(teamDB, gameDB, name1, score1, name2, score2);
   }

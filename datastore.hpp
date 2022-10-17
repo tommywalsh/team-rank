@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <vector>
 #include <set>
-#include <boost/optional.hpp>
+#include <optional>
 
 
 // Very simple CRUD-based datastore
@@ -40,14 +40,14 @@ template <typename T>
 class DataStore
 {
 private:
-  std::vector<boost::optional<T>> db;
+  std::vector<std::optional<T>> db;
 public:
 
   // Create a new object in the datastore.
   virtual Reference<T> create(const T& seed);
 
   // Read an object from the datastore, if it exists.
-  boost::optional<T> read(Reference<T> ref) const;
+  std::optional<T> read(Reference<T> ref) const;
 
   // Tests a reference for validity
   bool isValid(Reference<T> ref) const;
@@ -136,12 +136,12 @@ Reference<T> DataStore<T>::create(const T& seed) {
   // Always just add on to the end, never reuse an ID
   // This is theoretically space inefficient, but practically fine for us
   auto newId = db.size();
-  db.push_back(boost::optional<T>(seed));
+  db.push_back(std::optional<T>(seed));
   return Reference<T>(newId);
 }
 
 template<typename T>
-boost::optional<T> DataStore<T>::read(Reference<T> ref) const {
+std::optional<T> DataStore<T>::read(Reference<T> ref) const {
   return db[ref.id()];
 }
 
@@ -160,7 +160,7 @@ template<typename T>
 void DataStore<T>::destroy(Reference<T> ref) {
   // When an object is destroyed, we just leave a "hole" in its place
   // that will never be reused.
-  db[ref.id()] = boost::none;
+  db[ref.id()] = std::nullopt;
 }
 
 template<typename T>

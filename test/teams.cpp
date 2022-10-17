@@ -1,5 +1,7 @@
 #include "teams.hpp"
 
+#include <cassert>
+
 int main() {
 	TeamDB teamDB;
 

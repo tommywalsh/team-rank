@@ -22,7 +22,8 @@ Reference<Pod> PodDB::create(const Pod& pod) {
 }
 
 void PodDB::destroy(Reference<Pod> podRef) {
-  for (auto team : *read(podRef)) {
+  auto teamsInPod = *read(podRef);
+  for (auto team : teamsInPod) {
     teamToPodMap.erase(team);
   }
   DataStore::destroy(podRef);

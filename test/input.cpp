@@ -4,6 +4,7 @@
 #include "games.hpp"
 
 #include <sstream>
+#include <cassert>
 
 int main() {
   TeamDB teamDB;

@@ -3,6 +3,8 @@
 #include "teams.hpp"
 #include "games.hpp"
 
+#include <cassert>
+
 void testPodDB() {
   TeamDB teamDB;
   auto a = teamDB.getReference("Arlington");

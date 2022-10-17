@@ -10,7 +10,7 @@ sources := $(wildcard *cpp)
 
 executable := $(bin_dir)/podrank
 
-CXXFLAGS := -g --std=c++0x
+CXXFLAGS := -g --std=c++17
 DEPFLAGS := -MM -MMD -MP
 TESTFLAGS := -I.
 

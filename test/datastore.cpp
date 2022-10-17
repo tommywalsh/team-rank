@@ -1,5 +1,6 @@
 #include "datastore.hpp"
 
+#include <cassert>
 
 void assertSize(DataStore<int>& ds, std::size_t expectedSize) {
   assert (ds.allItems().size() == expectedSize);

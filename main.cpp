@@ -6,6 +6,8 @@
 #include "bterry.hpp"
 
 #include <iomanip>
+#include <iostream>
+#include <algorithm>
 
 void prettyPrint(std::ostream& os, double val) {
   os << std::setw(5);
